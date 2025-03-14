@@ -9,7 +9,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/factorials")
+@RequestMapping("/api")
 @Validated
 public class FactorialsController {
     private final FactorialsServiceImpl factorialsService;
@@ -19,10 +19,9 @@ public class FactorialsController {
         this.factorialsService = factorialsService;
     }
 
-    @GetMapping
+    @GetMapping("/factorials")
     public FactorialsResponse getFactorials(@RequestParam
                                                 @NotNull(message = "Parameter must exist.")
-                                                @Size(min = 1, max = 4, message = "Parameter must be of 1 to 4 characters long.")
                                                 @Min(value = 0, message = "Number must not be lower than 0.")
                                                 @Max(value = 1000, message = "Number must not be higher than 1000.")
                                                 Integer n) {
