@@ -1,4 +1,4 @@
-Simple REST Service on Spring Boot.
+Simple REST Service built on Spring Boot.
 
-Application contains Rest Controller and Service to handle API requests.
+Application contains Rest Controller to handle API requests and Service to provide some business logic.
 Controller is covered with unit-tests.
