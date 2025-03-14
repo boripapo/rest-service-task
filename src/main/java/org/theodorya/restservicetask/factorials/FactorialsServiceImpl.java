@@ -10,18 +10,18 @@ import java.util.List;
 public class FactorialsServiceImpl implements FactorialsService {
     @Override
     public List<BigInteger> getFactorialsFrom1ToN(Integer n) {
-        BigInteger a = BigInteger.valueOf(1);
-        if(n == 0) return List.of(a);
+            BigInteger a = BigInteger.valueOf(1);
+            if(n == 0) return List.of(a);
 
-        List<BigInteger> output = new ArrayList<>(n);
-        for(int i = 1; i <= n; i++) {
-            for(int j = 1; j <= i; j++) {
-                a = a.multiply(BigInteger.valueOf(j));
+            List<BigInteger> output = new ArrayList<>(n);
+            for(int i = 1; i <= n; i++) {
+                for(int j = 1; j <= i; j++) {
+                    a = a.multiply(BigInteger.valueOf(j));
+                }
+                output.add(a);
+                a = BigInteger.valueOf(1);
             }
-            output.add(a);
-            a = BigInteger.valueOf(1);
-        }
 
-        return output;
+            return output;
     }
 }
